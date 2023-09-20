@@ -1,7 +1,7 @@
 <template>
   <div>
      <img class="logo" src="@/assets/logo.png" alt="">
-     <h1>Characters</h1>
+     <h1>Personagens</h1>
      <input 
      type="text" 
      v-model="search" 
@@ -16,9 +16,13 @@
          <h2> {{ character.name}}</h2>
          <h4> {{ character.species}}</h4>
          <h4> {{ character.status}}</h4>
+         <router-link :to="'/character/' + character.id" class="link-personagem">
+             Ver detalhes
+          </router-link>
        </div>
        </div>
    </div>
+
   </div>
  </div>
 </template>
@@ -122,6 +126,16 @@ h4 {
  border-radius: 0.4rem;
  font-weight: inherit;
  padding: 0.2rem;
+}
+
+.link-personagem{
+  text-decoration: none;
+  margin: 1rem;
+  color: #8b8b8b;
+  background:  #00ff97;
+  border-radius: 0.4rem;
+  font-weight: inherit;
+  padding: 0.2rem;
 }
 input{
  text-align: center;
